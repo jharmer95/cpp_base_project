@@ -21,7 +21,7 @@ install:
 
 build_script:
   - cmd: echo Building on %arch% with %compiler%
-  - cmd: meson --backend=ninja builddir
+  - cmd: meson --backend=ninja -Duse_cppcheck=false builddir
   - cmd: ninja -C builddir
 
 test_script:
