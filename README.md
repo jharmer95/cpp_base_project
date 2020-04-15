@@ -1,5 +1,8 @@
 # cpp_base_project
 
+Travis CI:\
+[![Build Status](https://travis-ci.com/jharmer95/cpp_base_project.svg?branch=master)](https://travis-ci.com/jharmer95/cpp_base_project)
+
 A template C++ project for starting out. This takes inspiration from Jason Turner's [cpp_starter_project](https://github.com/lefticus/cpp_starter_project), but has been created from scratch for a more fine-tuned experience.
 
 ## Language Standards
@@ -71,8 +74,9 @@ Please follow the [contribution guide](CONTRIBUTING.md) for making contributions
 - [ ] Fuzz testing
 - [ ] Static testing
 - [ ] CI/CD
-  - [ ] Travis
+  - [X] ~~Travis~~
   - [ ] Github
+  - [ ] Migrate to using Docker containers to allow for newer gcc, cppcheck, etc.
 - [ ] Style Guide (in [CONTRIBUTING](CONTRIBUTING.md))
   - [ ] clang-format to go with style guide
 - [ ] clang-tidy file
