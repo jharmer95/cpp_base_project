@@ -13,6 +13,8 @@ matrix:
 
 before_install:
   - sudo apt-get -y install cppcheck
+  - sudo mkdir /usr/local/include/catch2
+  - sudo wget https://github.com/catchorg/Catch2/releases/download/v2.11.3/catch.hpp -O /usr/local/include/catch2/catch.hpp
 
 install:
   - pip install meson ninja

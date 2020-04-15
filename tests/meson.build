@@ -1,6 +1,6 @@
 # Dependencies for testing
 
-catch2_dep = dependency('catch2', version : '>= 2.0.0')
+catch2_dep = dependency('catch2', version : '>= 2.0.0', required : (not cpp.has_header('catch2/catch.hpp')))
 
 cpp_base_test_sources = ['test.cpp']
 cpp_base_test_includes = [include_dir]
