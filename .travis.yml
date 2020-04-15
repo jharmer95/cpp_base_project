@@ -11,10 +11,14 @@ matrix:
     - env: CXX=g++
     - env: CXX=clang++
 
+before_install:
+  - sudo apt-get -y install cppcheck
+
 install:
   - pip install meson ninja
 
 script:
   - meson builddir
+  - ninja -C builddir cppcheck
   - ninja -C builddir
   - ninja -C builddir test
