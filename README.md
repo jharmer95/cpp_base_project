@@ -1,7 +1,6 @@
 # cpp_base_project
 
-Travis CI:\
-[![Build Status](https://travis-ci.com/jharmer95/cpp_base_project.svg?branch=master)](https://travis-ci.com/jharmer95/cpp_base_project)
+[![Build status](https://ci.appveyor.com/api/projects/status/42jbtbcv2868plhw?svg=true)](https://ci.appveyor.com/project/jharmer95/cpp-base-project) [![Build Status](https://travis-ci.com/jharmer95/cpp_base_project.svg?branch=master)](https://travis-ci.com/jharmer95/cpp_base_project)
 
 A template C++ project for starting out. This takes inspiration from Jason Turner's [cpp_starter_project](https://github.com/lefticus/cpp_starter_project), but has been created from scratch for a more fine-tuned experience.
 
