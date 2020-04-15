@@ -1,4 +1,5 @@
 #include "printer.hpp"
+#include "version.hpp"
 
 #include <iostream>
 
@@ -11,4 +12,9 @@ int Print(const char* str)
 
     std::cout << str;
     return 0;
+}
+
+void PrintVersion()
+{
+    std::cout << VERSION_STR << '\n';
 }
