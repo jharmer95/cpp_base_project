@@ -56,6 +56,7 @@ This project will include a few key components:
   - [Code of conduct](CODE_OF_CONDUCT.md)
   - [Installation/build instructions](INSTALL.md)
   - [Changelog](CHANGELOG.md)
+  - [A Git ignore file](.gitignore)
   - [`clang_format`](.clang-format) and [`clang_tidy`](.clang-tidy) files
 
 ## Contributing
