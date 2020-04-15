@@ -2,7 +2,7 @@
 cpp_base_lib_warnings = project_cpp_warnings
 cpp_base_lib_sources = ['lib.cpp']
 cpp_base_lib_includes = [include_dir]
-cpp_base_lib = static_library('cpp_base', cpp_base_lib_sources, include_directories : cpp_base_lib_includes, install : false)
+cpp_base_lib = library('cpp_base', cpp_base_lib_sources, include_directories : cpp_base_lib_includes, install : false)
 
 # Executable
 cpp_base_exe_warnings = project_cpp_warnings

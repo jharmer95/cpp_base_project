@@ -1,10 +1,10 @@
 # Project
-project('cpp_starter_project', 'cpp', version: '0.1.0.0', license: 'CC0 1.0', meson_version : '>= 0.50', default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=true'])
+project('cpp_starter_project', 'cpp', version: '0.1.0.0', license: 'CC0 1.0', meson_version : '>= 0.53', default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=true', 'default_library=static'])
 
 # "Global" Dependencies
 
 # For when pthread required on *NIX systems
-dep_thread = dependency('threads')
+thread_dep = dependency('threads')
 
 # Compiler-dependent stuff
 cpp = meson.get_compiler('cpp')
@@ -16,7 +16,26 @@ elif cpp.get_id() in ['clang', 'clang++']
 elif cpp.get_id() == 'msvc'
     project_cpp_warnings = ['/W4', '/w14242', '/w14254', '/w14263', '/w14265', '/w14287', '/we4289', '/w14296', '/w14311', '/w14545', '/w14546', '/w14547', '/w14549', '/w14555', '/w14619', '/w14640', '/w14826', '/w14905', '/w14906', '/w14928']
 else
-    error(('Unsupported compiler: @0@').format(cpp.get_id()))
+    error('Unsupported compiler: @0@'.format(cpp.get_id()))
+endif
+
+# OS-dependent stuff
+os = host_machine.system()
+
+if os == 'linux'
+    # do linux stuff here
+elif os == 'darwin'
+    # do macos stuff here
+elif os == 'windows'
+    # do windows stuff here
+else
+    error('Unspported OS: @0@'.format(os))
+endif
+
+if get_option('use_cppcheck')
+    cppcheck = find_program('cppcheck', 'cppcheck.exe', dirs : ['C:\\Program Files\\Cppcheck'])
+    cppcheck_flags = get_option('cppcheck_flags')
+    run_target('cppcheck', command : [cppcheck, cppcheck_flags, '--project=' + join_paths(meson.build_root(), 'compile_commands.json')])
 endif
 
 # Sub-directories

@@ -47,7 +47,7 @@ This project will include a few key components:
   - Examples of unit and integration tests as well as fuzz testing, static testing, static analysis, dynamic analysis, etc.
 - CI/CD
   - Utilizing tools like GitHub actions and/or Travis and/or coverage tools to provide a boilerplate for their usage
-- GitHub (and possibly GitLab via a branch/fork) repository features like Issues, Wikis, Templates, Pages, etc.
+- GitHub (and possibly GitLab via a fork) repository features like Issues, Wikis, Templates, Pages, etc.
 - Documentation via Doxygen (see [docs](docs/index.html))
 - Boilerplates for other project files
   - README (this document)
@@ -64,3 +64,19 @@ This project will include a few key components:
 The first, best thing you can do, is submit and Issue for any additional features, bugs, or suggestions. I will also hopefully have documentation and a Wiki available.
 
 Please follow the [contribution guide](CONTRIBUTING.md) for making contributions to this project. This document will include instructions for contributing, as well as a style guide and a list of best practices.
+
+## TODO
+
+- [X] ~~Cppcheck target~~
+- [ ] Fuzz testing
+- [ ] Static testing
+- [ ] CI/CD
+  - [ ] Travis
+  - [ ] Github
+- [ ] Style Guide (in [CONTRIBUTING](CONTRIBUTING.md))
+  - [ ] clang-format to go with style guide
+- [ ] clang-tidy file
+- [ ] Contribution guide
+- [ ] Code of conduct
+- [ ] Installation guide
+- [ ] Doxygen documentation target
