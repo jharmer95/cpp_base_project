@@ -23,17 +23,17 @@ endif
 os = host_machine.system()
 
 if os == 'linux'
-    # do linux stuff here
+    cppcheck_dirs = []
 elif os == 'darwin'
-    # do macos stuff here
+    cppcheck_dirs = []
 elif os == 'windows'
-    # do windows stuff here
+    cppcheck_dirs = ['C:\\Program Files\\Cppcheck']
 else
     error('Unspported OS: @0@'.format(os))
 endif
 
 if get_option('use_cppcheck')
-    cppcheck = find_program('cppcheck', 'cppcheck.exe', dirs : ['C:\\Program Files\\Cppcheck'])
+    cppcheck = find_program('cppcheck', 'cppcheck.exe', dirs : cppcheck_dirs)
     cppcheck_flags = get_option('cppcheck_flags')
     run_target('cppcheck', command : [cppcheck, cppcheck_flags, '--project=' + join_paths(meson.build_root(), 'compile_commands.json')])
 endif
