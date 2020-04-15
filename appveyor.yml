@@ -3,11 +3,7 @@ image: Visual Studio 2019
 environment:
   matrix:
     - arch: x86
-      compiler: msvc2017
-    - arch: x86
       compiler: msvc2019
-    - arch: x64
-      compiler: msvc2017
     - arch: x64
       compiler: msvc2019
 
@@ -19,8 +15,9 @@ install:
   - cmd: echo Using Python at %PYTHON_ROOT%
   - cmd: set PATH=%cd%;%PYTHON_ROOT%;%PYTHON_ROOT%\Scripts;%PATH%
   - cmd: pip install ninja meson
-  - cmd: if %compiler%==msvc2017 ( call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxillary\Build\vcvarsall.bat" %arch% )
-  - cmd: if %compiler%==msvc2019 ( call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxillary\Build\vcvarsall.bat" %arch% )
+  - cmd: mkdir include\catch2
+  - cmd: curl -fsSL -o include\catch2\catch.hpp https://github.com/catchorg/Catch2/releases/download/v2.11.3/catch.hpp
+  - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxillary\Build\vcvarsall.bat" %arch%
 
 build_script:
   - cmd: echo Building on %arch% with %compiler%
