@@ -18,6 +18,7 @@ install:
   - cmd: mkdir include\catch2
   - cmd: curl -fsSL -o include\catch2\catch.hpp https://github.com/catchorg/Catch2/releases/download/v2.11.3/catch.hpp
   - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %arch%
+  - cmd: echo %INCLUDE%
 
 build_script:
   - cmd: echo Building on %arch% with %compiler%
