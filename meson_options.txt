@@ -1,0 +1,4 @@
+option('enable_fuzz_testing', type : 'boolean', value : false)
+option('enable_static_testing', type : 'boolean', value : false)
+option('use_cppcheck', type : 'boolean', value : true)
+option('cppcheck_flags', type : 'array', value : ['--enable=all', '--std=c++17', '--error-exitcode=1'])
