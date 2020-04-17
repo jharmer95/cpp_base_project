@@ -73,8 +73,10 @@ Please follow the [contribution guide](CONTRIBUTING.md) for making contributions
 - [ ] Fuzz testing
 - [ ] Static testing
 - [ ] CI/CD
+  - [X] ~~AppVeyor~~
   - [X] ~~Travis~~
   - [ ] Github
+  - [ ] Codecov
   - [ ] Migrate to using Docker containers to allow for newer gcc, cppcheck, etc.
 - [ ] Style Guide (in [CONTRIBUTING](CONTRIBUTING.md))
   - [ ] clang-format to go with style guide
