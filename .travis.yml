@@ -6,15 +6,30 @@ os:
 
 language: python
 
+env:
+  global:
+  - secure: "o8fVFkDshrrzgg3SA3jBxz3kChrWhdFuOGkIAIqzKOIZ6VDK7VqinE8sk+8JvqB7cw7YoDQNgqji4Gu0qAV56Szm6VaB+QYSa3I+tkxSGAYUpxIwuMtL0Xz5a2gDLqogUH64x6Z8kxw7Y4Hn8E7TcW1WjZrOUTwyTYDFqi99OVeNZBoj35wFpHcqilTw11H6mvKJj+D4cQun3xvO9GjmVnVFWb7EBRETmifG3VCoBDLPj8jCZ6SsPTypaIbgu79wzaznf8r9Jn6odC9ZLXu2tnjNHah4Vcy30ssmCaAmKgHsyAcP4sa8JZsq8tadINGilXAO7Y8lC+t0Xqq81dp9dLvB/iLTO+87yz2p8oIKyEYxhxRQiuUxs+EWYGd4Vdvrza+1zJz/t6aPnxP9dLDhg1jOifYD3BBwEw7DenOxr3G7OotKaphESyopcd6J2ZA/FtvPmthjy9ec7eL2M0gyWOgBiv0uExCXSLg6v0gYmLEmVqLcLn8ypMH++2w5ab5OPvMYn4XpyOzyj5WlS8r8fG7oWisjlRZEfmz1i3ZBItZfKq6BPF5IqA+I0lYeJojFquc8nMGd6t+QIIQDL2K5hkX2k89/AW/1TsbXlzj0zweHRXL2bUzMBQq15dN/CzaERVP/3bkCiDZisOKZ0y25833Kl+1PXMSdj6eioh+hxdE="
+
 matrix:
   include:
     - env: CXX=g++
     - env: CXX=clang++
 
 before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - sudo apt-get -y install cppcheck
   - sudo mkdir /usr/local/include/catch2
   - sudo wget https://github.com/catchorg/Catch2/releases/download/v2.11.3/catch.hpp -O /usr/local/include/catch2/catch.hpp
+
+addons:
+  coverity_scan:
+    project:
+      name: "jharmer95/cpp_base_project"
+      description: "A template C++ project for starting out"
+    notification_email: jharmer95@gmail.com
+    build_command_prepend: meson cover_build
+    build_command: ninja -C cover_build
+    branch_pattern: master
 
 install:
   - pip install meson ninja
