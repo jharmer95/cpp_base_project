@@ -14,3 +14,8 @@ TEST_CASE("Test case 2", "[!shouldfail]")
     const int result = Print("\0Hello, world!\n");
     REQUIRE(result == 0);
 }
+
+TEST_CASE("Print version", "[]")
+{
+    PrintVersion();
+}
