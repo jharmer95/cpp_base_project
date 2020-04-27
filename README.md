@@ -1,6 +1,6 @@
 # cpp_base_project
 
-![AppVeyor](https://img.shields.io/appveyor/build/jharmer95/cpp-base-project?logo=appveyor) ![Travis (.com)](https://img.shields.io/travis/com/jharmer95/cpp_base_project?logo=travis)
+![AppVeyor](https://img.shields.io/appveyor/build/jharmer95/cpp-base-project?logo=appveyor) ![Travis (.com)](https://img.shields.io/travis/com/jharmer95/cpp_base_project?logo=travis) ![Coverity Scan](https://img.shields.io/coverity/scan/20979)
 
 A template C++ project for starting out. This takes inspiration from Jason Turner's [cpp_starter_project](https://github.com/lefticus/cpp_starter_project), but has been created from scratch for a more fine-tuned experience.
 
