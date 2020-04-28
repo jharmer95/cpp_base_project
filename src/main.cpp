@@ -2,7 +2,7 @@
 
 int main()
 {
-    PrintVersion();
-    Print("Hello, world!\n");
-    return 0;
+	PrintVersion();
+	Print("Hello, world!\n");
+	return 0;
 }

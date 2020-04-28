@@ -79,7 +79,7 @@ Please follow the [contribution guide](CONTRIBUTING.md) for making contributions
   - [ ] Codecov
   - [ ] Migrate to using Docker containers to allow for newer gcc, cppcheck, etc.
 - [ ] Style Guide (in [CONTRIBUTING](CONTRIBUTING.md))
-  - [ ] clang-format to go with style guide
+  - [X] clang-format to go with style guide
 - [ ] clang-tidy file
 - [ ] Contribution guide
 - [ ] Code of conduct
